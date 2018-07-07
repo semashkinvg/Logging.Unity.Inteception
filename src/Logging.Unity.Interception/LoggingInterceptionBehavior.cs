@@ -15,15 +15,14 @@ namespace Logging.Unity.Interception
     {
         internal static readonly ILog Log = LogProvider.GetCurrentClassLogger();
 
-        private readonly ConcurrentDictionary<Type, Func<Task, IMethodInvocation, Stopwatch, Task>>
-            _wrapperCreators = new ConcurrentDictionary<Type, Func<Task,
-                IMethodInvocation, Stopwatch, Task>>();
+        private readonly ConcurrentDictionary<Type, Func<Task, IMethodInvocation, Stopwatch, Task>> _wrapperCreators =
+            new ConcurrentDictionary<Type, Func<Task, IMethodInvocation, Stopwatch, Task>>();
 
         public IMethodReturn Invoke(IMethodInvocation input,
             GetNextInterceptionBehaviorDelegate getNext)
         {
             var sw = Stopwatch.StartNew();
-            Log.Debug($"{input.MethodBase.Name} started");
+            Log.Debug($"{BuildMethodInvocationDescr(input)} started");
             var result = getNext()(input, getNext);
             var method = input.MethodBase as MethodInfo;
             if (result.ReturnValue != null
@@ -36,13 +35,18 @@ namespace Logging.Unity.Interception
                     this.GetWrapperCreator(method.ReturnType)(task, input, sw), result.Outputs);
             }
 
-            Log.Debug($"{input.MethodBase.Name} finished {sw.Elapsed}");
+            Log.Debug($"{BuildMethodInvocationDescr(input)} finished {sw.Elapsed}");
             return result;
         }
 
         private Task CreateGenericWrapperTask<T>(Task task, IMethodInvocation input, Stopwatch sw)
         {
             return this.DoCreateGenericWrapperTask<T>((Task<T>)task, input, sw);
+        }
+
+        protected virtual string BuildMethodInvocationDescr(IMethodInvocation input)
+        {
+            return input.CreateMethodInvocationDescription();
         }
 
         protected virtual async Task<T> DoCreateGenericWrapperTask<T>(Task<T> task,
@@ -54,7 +58,7 @@ namespace Logging.Unity.Interception
             }
             finally
             {
-                Log.Debug($"{input.MethodBase.Name} finished {sw.Elapsed}");
+                Log.Debug($"{BuildMethodInvocationDescr(input)} finished {sw.Elapsed}");
             }
         }
 
@@ -67,7 +71,7 @@ namespace Logging.Unity.Interception
             }
             finally
             {
-                Log.Debug($"{input.MethodBase.Name} finished {sw.Elapsed}");
+                Log.Debug($"{BuildMethodInvocationDescr(input)} finished {sw.Elapsed}");
             }
 
         }

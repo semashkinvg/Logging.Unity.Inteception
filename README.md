@@ -8,3 +8,7 @@ uc.AddNewExtension<Interception>();
 uc.RegisterType<IDummyService, DummyService>(
     new Interceptor<InterfaceInterceptor>(), new InterceptionBehavior<LoggingInterceptionBehavior>());
 ```
+
+## Customization
+
+To change method description, please inherite from `LoggingInterceptionBehavior` and override `BuildMethodInvocationDescr`. By default, it uses [MethodInvocationExtensions](https://github.com/semashkinvg/Logging.Unity.Inteception/blob/master/src/Logging.Unity.Interception/MethodInvocationExtensions.cs)

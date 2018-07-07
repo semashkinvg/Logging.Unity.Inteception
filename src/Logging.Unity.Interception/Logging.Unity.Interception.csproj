@@ -10,11 +10,12 @@
     <PackageProjectUrl>https://github.com/semashkinvg/Logging.Unity.Interception</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/semashkinvg/Logging.Unity.Interception/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright 2018</Copyright>
-    <Description>https://raw.githubusercontent.com/semashkinvg/Logging.Unity.Interception/master/README.md</Description>
+    <Description>Implementes simple logging using Unity.Interception and LibLog to support all popular logging libraries</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.1.0</AssemblyVersion>
     <FileVersion>1.0.1.0</FileVersion>
     <Version>1.0.1</Version>
+    <Authors>Vladimir Semashkin</Authors>
   </PropertyGroup>
 
   <ItemGroup>
