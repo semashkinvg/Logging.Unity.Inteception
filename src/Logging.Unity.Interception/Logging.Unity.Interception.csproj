@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>See release notes here  https://github.com/semashkinvg/Logging.Unity.Interception/blob/master/ReleaseNotes.md</PackageReleaseNotes>
+    <PackageTags>Logging Interception Unity IoC</PackageTags>
+    <RepositoryUrl>https://github.com/semashkinvg/Logging.Unity.Interception</RepositoryUrl>
+    <PackageIconUrl>https://github.com/semashkinvg/Logging.Unity.Interception/blob/master/default.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/semashkinvg/Logging.Unity.Interception</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/semashkinvg/Logging.Unity.Interception/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright 2018</Copyright>
+    <Description>https://raw.githubusercontent.com/semashkinvg/Logging.Unity.Interception/master/README.md</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LibLog" Version="5.0.2" />
+    <PackageReference Include="Unity.Interception" Version="5.5.3" />
+  </ItemGroup>
+
+</Project>

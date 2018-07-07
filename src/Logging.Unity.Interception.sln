@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.Unity.Interception", "Logging.Unity.Interception\Logging.Unity.Interception.csproj", "{290D4769-54E8-4A6F-905D-3DCC2B175FCF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{0661FD58-6B2A-4D93-9B94-5791507A70EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Console.Example", "Examples\Logging.Console.Example\Logging.Console.Example.csproj", "{B27079F6-098E-4E3C-8D0F-69B118D16690}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{290D4769-54E8-4A6F-905D-3DCC2B175FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290D4769-54E8-4A6F-905D-3DCC2B175FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290D4769-54E8-4A6F-905D-3DCC2B175FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290D4769-54E8-4A6F-905D-3DCC2B175FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27079F6-098E-4E3C-8D0F-69B118D16690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27079F6-098E-4E3C-8D0F-69B118D16690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27079F6-098E-4E3C-8D0F-69B118D16690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27079F6-098E-4E3C-8D0F-69B118D16690}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B27079F6-098E-4E3C-8D0F-69B118D16690} = {0661FD58-6B2A-4D93-9B94-5791507A70EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3C3FDD1-00A8-4EDB-86DC-4D2478B2A848}
+	EndGlobalSection
+EndGlobal

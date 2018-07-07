@@ -1,0 +1,31 @@
+configuration: Release
+
+# scripts to run before build
+before_build:
+  - dotnet restore
+  - nuget restore
+  
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+  
+build_script:
+  - dotnet build .\src\Logging.Unity.Interception.sln
+  - dotnet pack Logging.Unity.Interception
+  
+test:
+  # only assemblies to test
+  assemblies:
+    only:
+      - '**\*.Tests.dll'
+  
+artifacts:
+  - path: src\Logging.Unity.Interception\bin\Release
+    name: Logging.Unity.Interception_bin
+    
+  - path: '**\src\Logging.Unity.Interception\bin\Release\*.nupkg'
