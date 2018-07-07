@@ -12,6 +12,9 @@
     <Copyright>Copyright 2018</Copyright>
     <Description>https://raw.githubusercontent.com/semashkinvg/Logging.Unity.Interception/master/README.md</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
