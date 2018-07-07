@@ -2,8 +2,8 @@ configuration: Release
 
 # scripts to run before build
 before_build:
-  - dotnet restore
-  - nuget restore
+  - dotnet restore .\src\Logging.Unity.Interception.sln
+  - nuget restore .\src\Logging.Unity.Interception.sln
   
 dotnet_csproj:
   patch: true
@@ -16,7 +16,7 @@ dotnet_csproj:
   
 build_script:
   - dotnet build .\src\Logging.Unity.Interception.sln
-  - dotnet pack Logging.Unity.Interception
+  - dotnet pack src\Logging.Unity.Interception
   
 test:
   # only assemblies to test
